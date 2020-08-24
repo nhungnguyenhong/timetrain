@@ -14,3 +14,8 @@ use Illuminate\Http\Request;
 */
 
 Route::post('/login', 'AuthController@login')->name('login');
+
+Route::middleware('auth:api')->group(function () {
+    Route::get('/user', 'AuthController@user');
+    Route::get('/refresh', 'AuthController@refresh');
+});

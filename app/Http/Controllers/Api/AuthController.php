@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Requests\Api\Auth\LoginRequest;
+use App\Http\Resources\UserResource;
 use App\Services\Interfaces\AuthServiceInterface;
 
 class AuthController extends BaseController
@@ -21,5 +22,12 @@ class AuthController extends BaseController
         $response = $this->authService->login($request);
 
         return $this->responseSuccess(__('auth.login-success'), $response);
+    }
+
+    public function user()
+    {
+        $response = (new UserResource(me()))->toArray();
+
+        return $this->responseSuccess('', $response);
     }
 }
