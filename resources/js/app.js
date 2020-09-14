@@ -5,7 +5,7 @@ import RouterPrefetch from 'vue-router-prefetch'
 import router from "./router/index";
 import BlackDashboard from "./plugins/blackDashboard";
 import i18n from "./i18n";
-import App from "./App";
+import App from "./App.vue";
 
 /**
  * First we will load all of this project's JavaScript dependencies which
