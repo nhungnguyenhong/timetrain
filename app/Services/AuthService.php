@@ -23,7 +23,7 @@ class AuthService extends BaseService implements AuthServiceInterface
             throw new ApiErrorException(__('auth.failed'));
         }
 
-        $user = Auth::guard('web')->user()->with('roles')->firstOrFail();
+        $user = Auth::guard('web')->user();
         $tokenResult = $user->createToken('Personal Access Token');
         $token = $tokenResult->token;
 

@@ -13,7 +13,7 @@
                         <span class="navbar-toggler-bar bar3"></span>
                     </button>
                 </div>
-                <a class="navbar-brand" href="#pablo">{{ routeName }}</a>
+                <a class="navbar-brand" href="#">{{ routeName }}</a>
             </div>
             <button class="navbar-toggler" type="button"
                     @click="toggleMenu"
@@ -37,7 +37,7 @@
                             <a slot="title" href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"
                                aria-expanded="true">
                                 <div class="photo">
-                                    <img src="img/anime3.png">
+                                    <img :src="$auth.user().avatar">
                                 </div>
                                 <b class="caret d-none d-lg-block d-xl-block"></b>
                                 <p class="d-lg-none">

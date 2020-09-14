@@ -1,15 +1,43 @@
 import DashboardLayout from "@/layout/dashboard/DashboardLayout.vue";
 // GeneralViews
 import NotFound from "@/pages/NotFoundPage.vue";
+import Login from "../pages/Login";
 
 // Admin pages
 const Dashboard = () => import(/* webpackChunkName: "dashboard" */"@/pages/Dashboard.vue");
 
 const routes = [
     {
+        path: "/login",
+        name: 'login',
+        component: Login
+    },
+    {
+        path: "/admin",
+        component: DashboardLayout,
+        redirect: {
+            name: "admin-dashboard"
+        },
+        meta: {
+            auth: {roles: 'Admin', redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+        },
+        children: [
+            {
+                path: "dashboard",
+                name: "admin-dashboard",
+                component: Dashboard
+            }
+        ]
+    },
+    {
         path: "/",
         component: DashboardLayout,
-        redirect: "/dashboard",
+        redirect: {
+            name: "dashboard"
+        },
+        meta: {
+            auth: {roles: ['Employee', 'Leader'], redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+        },
         children: [
             {
                 path: "dashboard",
@@ -18,7 +46,10 @@ const routes = [
             }
         ]
     },
-    {path: "*", component: NotFound},
+    {
+        path: "*",
+        name: 'not-found',
+        component: NotFound}
 ];
 
 /**

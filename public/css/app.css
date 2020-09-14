@@ -10899,6 +10899,10 @@ a.text-dark:focus {
   }
 }
 
+.mt-10 {
+  margin-top: 10rem !important;
+}
+
 var map = {
 	"./af": "./node_modules/moment/locale/af.js",
 	"./af.js": "./node_modules/moment/locale/af.js",

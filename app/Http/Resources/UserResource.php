@@ -24,11 +24,13 @@ class UserResource extends JsonResource
             'email' => $this->email,
             'avatar' => $this->avatar ?? User::AVATAR_DEFAULT,
             'description' => $this->description ?? '',
-            'roles' => RoleResource::collection($this->whenLoaded('roles')),
+            'roles' => RoleResource::collection($this->whenLoaded('roles'))->map(function ($role) {
+                return $role->name;
+            }),
         ], $this->mergeWhen(URL::current() === route('login'), [
             'token_type' => 'Bearer',
             'access_token' => $tokenResult->accessToken ?? '',
             'expires_at' => Carbon::parse($token->expires_at ?? now())->toDateTimeString(),
-        ])->data);
+        ])->data ?? []);
     }
 }

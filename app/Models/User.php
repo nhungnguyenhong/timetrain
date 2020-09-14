@@ -39,6 +39,10 @@ class User extends BaseModel implements
         'avatar' => self::AVATAR_DEFAULT,
     ];
 
+    protected $with = [
+        'roles',
+    ];
+
     public function roles()
     {
         return $this->belongsToMany(Role::class);
