@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('password', 255);
             $table->text('avatar')->nullable();
             $table->text('description')->nullable();
-            $table->unsignedBigInteger('leader_id');
+            $table->unsignedBigInteger('leader_id')->nullable();
 
             $table->timestamps();
             $table->softDeletes();
