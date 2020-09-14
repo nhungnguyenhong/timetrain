@@ -14,12 +14,12 @@ class CreateTasksTable extends Migration
     public function up()
     {
         Schema::create('tasks', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
 
             $table->text('content');
-            $table->unsignedFloat('estimate_time')->default(0);
+            $table->Float('estimate_time')->default(0);
 
-            $table->foreignId('timesheet_id');
+            $table->unsignedBigInteger('timesheet_id');
 
             $table->timestamps();
         });

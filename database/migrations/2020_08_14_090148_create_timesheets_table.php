@@ -14,7 +14,7 @@ class CreateTimesheetsTable extends Migration
     public function up()
     {
         Schema::create('timesheets', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
 
             $table->date('date');
             $table->text('trouble')->nullable();
