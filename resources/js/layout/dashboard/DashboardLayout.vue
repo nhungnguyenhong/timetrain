@@ -4,6 +4,7 @@
             <template slot="links">
                 <menu-admin v-show="$auth.check('Admin')"></menu-admin>
                 <menu-employee v-show="$auth.check('Employee')"></menu-employee>
+                <menu-timesheet></menu-timesheet>
             </template>
         </side-bar>
         <div class="main-panel">
@@ -22,6 +23,7 @@ import DashboardContent from "./Content.vue";
 import MobileMenu from "./MobileMenu";
 import MenuAdmin from "../menu/MenuAdmin";
 import MenuEmployee from "../menu/MenuEmployee";
+import MenuTimesheet from "../menu/MenuTimesheet";
 
 export default {
     components: {
@@ -30,7 +32,8 @@ export default {
         DashboardContent,
         MobileMenu,
         MenuAdmin,
-        MenuEmployee
+        MenuEmployee,
+        MenuTimesheet
     },
     methods: {
         toggleSidebar() {

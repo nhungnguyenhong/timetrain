@@ -5,6 +5,7 @@ import Login from "../pages/Login";
 
 // Admin pages
 const Dashboard = () => import(/* webpackChunkName: "dashboard" */"@/pages/Dashboard.vue");
+const Timesheet = () => import(/* webpackChunkName: "timesheet" */"@/pages/Timesheet.vue");
 
 const routes = [
     {
@@ -43,6 +44,28 @@ const routes = [
                 path: "dashboard",
                 name: "dashboard",
                 component: Dashboard
+            },
+            {
+                path: "timesheet",
+                name: "timesheet",
+                component: Timesheet
+            }
+        ]
+    },
+    {
+        path: "/timesheet",
+        component: Timesheet,
+        redirect: {
+            name: "timesheet"
+        },
+        meta: {
+            auth: {roles: ['Employee', 'Leader'], redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+        },
+        children: [
+            {
+                path: "timesheet",
+                name: "timesheet",
+                component: Timesheet
             }
         ]
     },

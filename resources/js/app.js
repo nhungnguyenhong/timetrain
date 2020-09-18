@@ -5,7 +5,7 @@ import RouterPrefetch from 'vue-router-prefetch';
 import router from "./router/index";
 import BlackDashboard from "./plugins/blackDashboard";
 import i18n from "./i18n";
-import App from "./App";
+import App from "./App.vue";
 import auth from './auth';
 import VueAuth from '@websanova/vue-auth';
 import VueAxios from 'vue-axios';
