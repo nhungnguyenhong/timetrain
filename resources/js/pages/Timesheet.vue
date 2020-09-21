@@ -18,8 +18,12 @@
         </div>
         <hr>
         </div>
-        <!-- Table  -->
-        
+            <!-- Table  -->
+        <div class="edit">
+            <i class="fas fa-edit"></i>
+            <i class="fas fa-trash"></i>
+            <i class="fas fa-plus"></i>
+        </div>
 <!-- Table  -->
 <table class="table border border-light" style="width:80%; margin-left:8%; margin-top: 5%">
   <!-- Table head -->
@@ -162,5 +166,13 @@ hr {
     border: 1px solid gray;
     width: 60%;
     margin-bottom: 2%;
+}
+.edit {
+    margin-bottom: -5%;
+    margin-left: 70%;
+}
+.fa-trash {
+    margin-left: 5px;
+    margin-right: 5px;
 }
 </style>

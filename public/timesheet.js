@@ -81,6 +81,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -146,7 +150,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.title[data-v-49fb7279] {\r\n    float:left;\r\n    color: #ffff;\n}\n.option[data-v-49fb7279] {\r\n    color: black;\n}\n.custom-select[data-v-49fb7279] {\r\n    width: 85px;\n}\n.name[data-v-49fb7279] {\r\n    margin-left: -66%;\n}\n.leader[data-v-49fb7279] {\r\n    margin-left: 47%;\r\n    margin-top:-2.5%;\n}\nhr[data-v-49fb7279] {\r\n    border: 1px solid gray;\r\n    width: 60%;\r\n    margin-bottom: 2%;\n}\r\n", ""]);
+exports.push([module.i, "\n.title[data-v-49fb7279] {\r\n    float:left;\r\n    color: #ffff;\n}\n.option[data-v-49fb7279] {\r\n    color: black;\n}\n.custom-select[data-v-49fb7279] {\r\n    width: 85px;\n}\n.name[data-v-49fb7279] {\r\n    margin-left: -66%;\n}\n.leader[data-v-49fb7279] {\r\n    margin-left: 47%;\r\n    margin-top:-2.5%;\n}\nhr[data-v-49fb7279] {\r\n    border: 1px solid gray;\r\n    width: 60%;\r\n    margin-bottom: 2%;\n}\n.edit[data-v-49fb7279] {\r\n    margin-bottom: -5%;\r\n    margin-left: 70%;\n}\n.fa-trash[data-v-49fb7279] {\r\n    margin-left: 5px;\r\n    margin-right: 5px;\n}\r\n", ""]);
 
 // exports
 
@@ -223,6 +227,8 @@ var render = function() {
         _c("hr")
       ]),
       _vm._v(" "),
+      _vm._m(1),
+      _vm._v(" "),
       _c(
         "table",
         {
@@ -230,7 +236,7 @@ var render = function() {
           staticStyle: { width: "80%", "margin-left": "8%", "margin-top": "5%" }
         },
         [
-          _vm._m(1),
+          _vm._m(2),
           _vm._v(" "),
           _c(
             "tbody",
@@ -332,6 +338,18 @@ var staticRenderFns = [
         })
       ]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "edit" }, [
+      _c("i", { staticClass: "fas fa-edit" }),
+      _vm._v(" "),
+      _c("i", { staticClass: "fas fa-trash" }),
+      _vm._v(" "),
+      _c("i", { staticClass: "fas fa-plus" })
+    ])
   },
   function() {
     var _vm = this
